@@ -1,0 +1,299 @@
+/*
+    начало базовой разметки css
+    чтоб не запутаться лучше оставлять коментарии
+*/
+
+
+/*
+    отменяем отступы в браузере 
+    и делаем работу margin и padding более гибкой
+*/
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/*
+    задаем контайнер и выравниваем элементы по центру
+*/
+
+.container {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/*
+    прижимаем footer к низу сайта
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 100vh;
+    background: #333;
+    color: #f3f5f7;
+}
+
+/*
+    конец базовой разметки css разметки
+*/
+
+/*
+    начало уже какого-то блока
+*/
+
+.header__top h1, h2, p {
+    text-align: center;
+}
+
+.header__top {
+    background-image: url(../img/bg/header__bg.jpeg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.header__top h1 {
+    padding-top: 50px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+}
+
+.header__top h2 {
+    padding-top: 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.header p {
+    width: 315px;
+    margin: 0 auto;
+    padding-top: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.header__info h2, .works h2, .price h2, .answer h2, .rewiew h2, .question h2, .adress h2 {
+    padding-top: 30px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+    padding-bottom: 50px;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(155, 152, 152); /* Параметры тени */
+}
+
+.header__info span {
+    /* width: 100%; */
+    text-align: justify;
+    height: 52px;
+    margin-left: 105px;
+    margin-top: -43px;
+    z-index: 100;  
+}
+
+
+.header__info ol {
+    padding-bottom: 50px;
+    border-bottom: 2px solid rgb(179, 174, 174);
+}
+
+
+.header__info ol li {
+    width: 100%;
+    text-align: justify;min-height: 200px;font-size: 92px;
+    color: #625f5f;
+margin-top: -51px;padding: -24px;}
+
+.inf {
+    display: inline-block;
+    font-size: 39px;
+    color: #fff8f8;
+}
+
+.header__info ol li::before {
+    display: inline-block;
+    content: '';
+    width: 52px;
+    height: 52px;
+    background: url(../img/svg/warranty-term-svgrepo-com.svg) no-repeat;
+    transform: translate(50px, 50px);
+}
+
+
+.header__info ol li::before {
+    display: block;
+    content: '';
+    width: 52px;
+    height: 52px;
+    background: url(../img/svg/warranty-term-svgrepo-com.svg) no-repeat;
+    transform: translate(15px, 75px);
+}
+
+.header__info ol li:nth-child(2):before {
+    background: url(../img/svg/client-profile-svgrepo-com.svg);
+}
+
+.header__info ol li:nth-child(1):before {
+    background: url(../img/svg/factory-svgrepo-com.svg);
+}
+
+/*
+    colabse list
+*/
+.collapsible {
+    cursor: pointer;
+    background: none;
+    color: #f3f5f7;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 28px;
+    padding-bottom: 30px;
+  }
+  
+
+  
+  .collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: left;
+    margin-right: 5px;
+}
+  
+.active:after {
+    content: "\2212";
+}
+  
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.content p {
+    width: 100%;
+    text-align: justify;
+}
+
+/**/
+
+.tel {
+    display: block;
+    width: 100%;
+    background: rgb(192, 71, 71);
+    padding: 15px;
+    border-radius: 25px;
+    text-align: center;
+    color: #f3f5f7;
+    font-size: 24px;
+    transition: color 0.8s;
+
+}
+
+.tel:hover {
+    color: #beb8b8;
+}
+
+.header__info, .price, .answer, .rewiew,  .question, .adress{
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgb(179, 174, 174);
+}
+
+/* splidejs */
+
+.splide {
+    margin: 0 auto;
+  }
+
+  .thumbnails {
+    display: flex;
+    margin: 1rem auto 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    opacity: 0.3;
+  }
+
+  .thumbnail.is-active {
+    opacity: 1;
+  }
+
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+  }
+
+/*
+    media запросы для адаптивной верстки
+*/
+
+.works {
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgb(179, 174, 174);
+}
+.price__img {
+    width: 100%;
+    height: 500px;
+    background: url(../img/bg/price.jpg) no-repeat top center;
+    background-size: 100%;
+}
+
+.price__img h2 {
+    text-align: right;
+    width: 394px;
+    margin-left: auto;
+    line-height: 48px;
+    margin-right: 40px;
+    padding-top: 117px;
+}
+
+.price__img p {
+    /* width: 315px; */
+    /* margin: 0 auto; */
+    padding-top: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 31px;
+    line-height: 24px;
+    padding-top: 110px;text-shadow: 1px 1px 2px black, 0 0 1em rgb(155, 152, 152); /* Параметры тени */
+}
+
+.credit {
+    width: 100%;
+    min-height: 200px;
+    background: rgb(192, 71, 71);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 31px;
+    line-height: 30px;
+    border-radius: 25px;
+    padding: 28px;
+    margin: 25px 0 25px 0;
+text-align: justify;}
